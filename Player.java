@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Player {
 	
-	static ArrayList<Card> playerHand = new ArrayList<Card>(); 
+	private ArrayList<Card> playerHand = new ArrayList<Card>(); 
 	
 	
 	

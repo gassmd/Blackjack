@@ -1,4 +1,3 @@
-
 public class Card {
 	
 	private Suit suit; 
@@ -9,7 +8,7 @@ public class Card {
 		this.rank = thisCardRank;
 	}
 	
-	public Rank getRank() {
+	public static Rank getRank() {
 		return rank;
 	}
 	
