@@ -2,19 +2,13 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-//		Blackjack.blackjack();
-//		System.out.println("");
-//		Deck.printDeck(Blackjack.thisDeck);
-//		System.out.println("");
-		int testValue = Rank.THREE.getCardValue() + Rank.FOUR.getCardValue(); 
-		int testValueTwo = Rank.FIVE.getCardValue() + Rank.QUEEN.getCardValue(); 
-		for (Rank rank : Rank.values()) {
-			System.out.println(rank);
-			System.out.println(rank.getCardValue()); 
-		}
-		System.out.println(""); 
-		System.out.println(testValue); 
-		System.out.println(testValueTwo); 
+
+		Blackjack.blackjack();
+		Deck.printDeck(Blackjack.thisDeck);
+		System.out.println("Player total:");
+		
+		System.out.println(Blackjack.thisBlackjackHand.get(0));
+		System.out.println(Blackjack.thisBlackjackHand.get(1));
 	}
 }
 	

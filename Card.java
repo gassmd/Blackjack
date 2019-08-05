@@ -4,16 +4,20 @@ public class Card {
 	private Rank rank; 
 	
 	public Card (Suit thisCardSuit, Rank thisCardRank) {
-		this.suit = thisCardSuit;
-		this.rank = thisCardRank;
+		suit = thisCardSuit;
+		rank = thisCardRank;
 	}
 	
-	public static Rank getRank() {
-		return rank;
+	public Rank getRank() {
+		return this.rank;
 	}
 	
 	public Suit getSuit() {
-		return suit;
+		return this.suit;
+	}
+	
+	public int getValue(Rank rank) {
+		return this.cardValue();  
 	}
 	
 	public String toString() {

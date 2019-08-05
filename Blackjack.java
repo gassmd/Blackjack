@@ -38,14 +38,11 @@ public class Blackjack{
 		System.out.println("CURRENT PLAYER HAND: ");
 		Player.printHand(thisBlackjackHand);
 	}
+	public static ArrayList<Card> getPlayerHand(){
+		return thisBlackjackHand;
+	}
 	 
 	
-	public static int aceCardValue() {
-		// if player total with ace as 1 is above 21, player loses
-		// if player total with ace as 1 is below 21, try making ace 10
-		// if player total with ace as 10 is above 21, make ace 1
-		// if player total with ace as 10 is below 21, keep ace as 10
-		
-	}
+	
 	}
 
