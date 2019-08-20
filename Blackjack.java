@@ -31,15 +31,36 @@ public class Blackjack{
 			return true;
 		}
 		else {
-			return false; 
+			thisBlackjackHand.add(Deck.drawCard(thisDeck));
+			currentHandPrint(); 
+			return true; 
 		}
 	}
 	public static void currentHandPrint() {
 		System.out.println("CURRENT PLAYER HAND: ");
 		Player.printHand(thisBlackjackHand);
 	}
+	
+	public static int getCurrentHandValue() {
+		int handValue = 0; 
+		for (int i = 0; i<thisBlackjackHand.size(); i++) {		
+			 handValue+=thisBlackjackHand.get(i).getRank().getCardValue();
+		}
+		return handValue;
+	}
 	public static ArrayList<Card> getPlayerHand(){
 		return thisBlackjackHand;
+	}
+	public static boolean loseCheck() {
+		if (getCurrentHandValue() < 21) {
+			return true;
+		}
+		if (getCurrentHandValue()> 21) {
+			return false;
+		}
+		else {
+			return true; 
+		}
 	}
 	 
 	
