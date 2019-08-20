@@ -5,7 +5,7 @@ public class Main {
 
 		Blackjack.blackjack();
 		//Deck.printDeck(Blackjack.thisDeck);
-		
+
 		System.out.println("Player total:");
 		System.out.println(Blackjack.getCurrentHandValue());
 		System.out.println("");
@@ -22,10 +22,10 @@ public class Main {
 				System.out.println("You bust!");
 			}
 		}
-		
-		
-		
-		}
-	}
 
-	
+
+
+	}
+}
+
+
