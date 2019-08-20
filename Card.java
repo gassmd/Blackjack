@@ -16,8 +16,9 @@ public class Card {
 		return this.suit;
 	}
 	
-	public int getValue(Rank rank) {
-		return this.cardValue();  
+	public int getValue(Rank thisRank) {
+		Rank newRank = thisRank; 
+		thisRank.getCardValue; 
 	}
 	
 	public String toString() {
