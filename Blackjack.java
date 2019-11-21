@@ -6,40 +6,41 @@ public class Blackjack {
 	static int numOfDecks = 1;
 
 	public static void blackjack() {
-		gameStart();
+		newGame();
 		currentHandPrint();
-		// thisBlackjackHand.add(Deck.drawCard(thisDeck));
-		// currentHandPrint();
-
 	}
 
-	public static void gameStart() {
+	public static void newGame() {		// starts new game, builds deck, adds two cards to player hand
+		System.out.println("Welcome to Blackjack!" + "\n" + "----------------------");
 		Deck.buildDeck(thisDeck, numOfDecks, true);
-		System.out.println("Welcome to Blackjack!");
 		thisBlackjackHand.add(Deck.drawCard(thisDeck));
 		thisBlackjackHand.add(Deck.drawCard(thisDeck));
+		//Dealer.dealerTotalTest(); 		// temp method to give dealer total with random number 
 	}
 
-	public static boolean hitOrStay() {
+	public static void hitOrStay() {
 		Scanner s = new Scanner(System.in);
-		System.out.println("HIT? Y/N");
-		if (s.nextLine() == "Y") {
+		System.out.println("HIT? y/n");
+		String ans = s.nextLine(); 
+		if (ans.equals("y") || ans.equals("Y")) {
 			thisBlackjackHand.add(Deck.drawCard(thisDeck));
 			currentHandPrint();
-			return true;
-		} else {
-			thisBlackjackHand.add(Deck.drawCard(thisDeck));
+			Player.handContainsAce();
+		} else if (ans.equals("n") || ans.equals("N")) {
+			System.out.println("You choose to stay");
 			currentHandPrint();
-			return true;
-		}
-	}
+			Player.handContainsAce();
 
-	public static void currentHandPrint() {
-		System.out.println("CURRENT PLAYER HAND: ");
+		}
+		
+	}
+	
+	public static void currentHandPrint() {		// prints current hand
+		System.out.println("CURRENT PLAYER HAND: " + "\n");
 		Player.printHand(thisBlackjackHand);
 	}
 
-	public static int getCurrentHandValue() {
+	public static int getCurrentHandTotal() {		// gets total of all cards in hand
 		int handValue = 0;
 		for (int i = 0; i < thisBlackjackHand.size(); i++) {
 			handValue += thisBlackjackHand.get(i).getRank().getCardValue();
@@ -52,14 +53,13 @@ public class Blackjack {
 	}
 
 	public static boolean loseCheck() {
-		if (getCurrentHandValue() < 21) {
+		if (getCurrentHandTotal() < 21) {
 			return true;
 		}
-		if (getCurrentHandValue() > 21) {
+		if (getCurrentHandTotal() > 21) {
 			return false;
 		} else {
 			return true;
 		}
 	}
-
 }
